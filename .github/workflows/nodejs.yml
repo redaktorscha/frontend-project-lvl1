@@ -1,0 +1,20 @@
+name: nodejs
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "🎉 Successfully triggered by a ${{ github.event_name }} event\n🐧 Running on a ${{ runner.os }} server\n 💡 Checking the ${{ github.repository }} repository"
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+          node-version: '16.x'
+    - name: npm install
+      run: make install
+    - name: lint check
+      run: make lint
+      
