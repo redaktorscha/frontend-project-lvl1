@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import greetUser from './greetUser.js';
+import gameRules from './gameRules.js';
 
 /**
  * play game depending on game type and max attempts number
@@ -7,30 +8,28 @@ import greetUser from './greetUser.js';
  * @param {number} maxAttempts
  */
 const playGame = (gameType, maxAttempts) => {
-  const userName = greetUser(true);
+  const userName = greetUser(true); // get user name
 
   let attemptCnt = 0;
-  let gameRule = '';
+  const gameRule = gameRules[gameType]; // get console msg - rule of the current game
+  console.log(gameRule);
 
-  if (gameType === 'even') {
-    gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
-    console.log(gameRule);
-
-    while (attemptCnt < maxAttempts) {
-      const input = Math.floor(Math.random() * 100);
-      console.log(`Question: ${input}`);
-      const correctAnswer = input % 2 === 0 ? 'yes' : 'no';
-      const userAnswer = readlineSync.question('Your answer: ');
-      if (userAnswer === correctAnswer) {
-        console.log('Correct!');
-        attemptCnt += 1;
-      } else {
-        console.log(`'${userAnswer}' is wrong answer :-( Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
-        return;
-      }
+  while (attemptCnt < maxAttempts) {
+    const input = Math.floor(Math.random() * 100);
+    console.log(`Question: ${input}`);
+    const correctAnswer = input % 2 === 0 ? 'yes' : 'no';
+    const userAnswer = readlineSync.question('Your answer: '); // get user console input
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      attemptCnt += 1;
+    } else {
+      // game over, user loses
+      console.log(`'${userAnswer}' is wrong answer :-( Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
+      return;
     }
-    console.log(`Congratulations, ${userName}!`);
   }
+  // user wins
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
