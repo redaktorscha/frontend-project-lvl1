@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import greetUser from './greetUser.js';
 import gameRules from './gameRules.js';
+import makeGameData from './makeGameData.js';
 
 /**
  * play game depending on game type and max attempts number
@@ -15,9 +16,11 @@ const playGame = (gameType, maxAttempts) => {
   console.log(gameRule);
 
   while (attemptCnt < maxAttempts) {
-    const input = Math.floor(Math.random() * 100);
-    console.log(`Question: ${input}`);
-    const correctAnswer = input % 2 === 0 ? 'yes' : 'no';
+    // const input = Math.floor(Math.random() * 100); // const [q, corAns]=getGameData(gameType)
+    const [currentTask, correctAnswer] = makeGameData(gameType);
+    // console.log(`Question: ${input}`);
+    console.log(currentTask);
+    // const correctAnswer = input % 2 === 0 ? 'yes' : 'no';
     const userAnswer = readlineSync.question('Your answer: '); // get user console input
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
