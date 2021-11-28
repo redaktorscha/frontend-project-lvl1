@@ -11,6 +11,6 @@ brain-calc:
 publish:
 	npm publish --dry-run
 link:
-	npm link @hexlet/code@1.0.0
+	npm link
 reshim:
 	asdf reshim nodejs
