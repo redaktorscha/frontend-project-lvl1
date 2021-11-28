@@ -16,7 +16,16 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 ### Brain-even game example (asciinema)
-[![asciicast](https://asciinema.org/a/hNUCC1IDEnZfNrhBWwkzs66xb.svg)](https://asciinema.org/a/hNUCC1IDEnZfNrhBWwkzs66xb)
+[![asciicast](https://asciinema.org/a/452125.svg)](https://asciinema.org/a/452125)
 
 ### Brain-calc game example (asciinema)
 [![asciicast](https://asciinema.org/a/452028.svg)](https://asciinema.org/a/452028)
+
+
+### Brain-gcd game example (asciinema)
+[![asciicast](https://asciinema.org/a/452124.svg)](https://asciinema.org/a/452124)
+
+### Brain-prime game example (asciinema)
+
+
+### Brain-progression game example (asciinema)
