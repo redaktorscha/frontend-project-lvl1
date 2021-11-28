@@ -21,7 +21,7 @@ const getGameInputs = (gameTitle) => {
       inputs.push(opArr[randomIdx]); // 'add', 'substr' or 'mult'
     }
   } else { // progression
-    const seqLen = 8; // could be any
+    const seqLen = 10; // could be any
     const range = 10; // why not
     inputs.push(...createSequence(seqLen, range));
   }
