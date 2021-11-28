@@ -17,3 +17,6 @@
 
 ### Brain-even game example (asciinema)
 [![asciicast](https://asciinema.org/a/hNUCC1IDEnZfNrhBWwkzs66xb.svg)](https://asciinema.org/a/hNUCC1IDEnZfNrhBWwkzs66xb)
+
+### Brain-calc game example (asciinema)
+[![asciicast](https://asciinema.org/a/452028.svg)](https://asciinema.org/a/452028)
