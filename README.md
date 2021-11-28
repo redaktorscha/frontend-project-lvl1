@@ -21,11 +21,10 @@
 ### Brain-calc game example (asciinema)
 [![asciicast](https://asciinema.org/a/452028.svg)](https://asciinema.org/a/452028)
 
-
 ### Brain-gcd game example (asciinema)
 [![asciicast](https://asciinema.org/a/452124.svg)](https://asciinema.org/a/452124)
 
-### Brain-prime game example (asciinema)
-
-
 ### Brain-progression game example (asciinema)
+[![asciicast](https://asciinema.org/a/452136.svg)](https://asciinema.org/a/452136)
+
+### Brain-prime game example (asciinema)
