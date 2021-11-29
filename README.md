@@ -28,3 +28,4 @@
 [![asciicast](https://asciinema.org/a/452136.svg)](https://asciinema.org/a/452136)
 
 ### Brain-prime game example (asciinema)
+[![asciicast](https://asciinema.org/a/452144.svg)](https://asciinema.org/a/452144)
