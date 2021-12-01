@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "first Hexlet project",
+  "description": "a set of terminal-based brain games",
   "type": "module",
   "main": "./index.js",
   "scripts": {
