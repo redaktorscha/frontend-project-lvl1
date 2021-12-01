@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
 import playGame from '../index.js';
+import { gameRule, makeGameData } from '../src/games/gamePrime.js';
 
-playGame('prime', 3); // game name, attempts count
+playGame(gameRule, makeGameData);
