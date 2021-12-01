@@ -9,6 +9,10 @@ export const gameRule = 'Answer \'yes\' if the number is even, otherwise answer 
  * @returns {Array<string>}
  */
 export const makeGameData = () => {
+  /**
+   * @param {number} num
+   * @returns {boolean}
+   */
   const isEven = (num) => num % 2 === 0;
 
   const input = generateRandInt();
