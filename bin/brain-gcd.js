@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
 import playGame from '../index.js';
+import { gameRule, makeGameData } from '../src/games/gameGCD.js';
 
-playGame('gcd', 3); // game name, attempts count
+playGame(gameRule, makeGameData);
