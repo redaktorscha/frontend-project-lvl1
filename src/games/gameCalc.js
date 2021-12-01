@@ -3,7 +3,7 @@ import generateRandInt from '../common/generateRandInt.js';
 /**
  * @type {string}
  */
-export const gameRule = 'What is the result of the expression?';
+export const gameRule = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'.';
 
 /**
  * @returns {Array<string>}
