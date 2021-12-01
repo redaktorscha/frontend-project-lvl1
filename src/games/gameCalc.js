@@ -3,7 +3,7 @@ import generateRandInt from '../common/generateRandInt.js';
 /**
  * @type {string}
  */
-export const gameRule = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'.';
+export const gameRule = 'What is the result of the expression?';
 
 /**
  * @returns {Array<string>}
@@ -37,9 +37,10 @@ export const makeGameData = () => {
    * @param {number} a
    * @param {number} b
    * @param {string} op
+   * @param {mathOperations} math
    * @returns {number}
    */
-  const calc = (a, b, op) => mathOperations[op](a, b);
+  const calc = (a, b, op, math) => math[op](a, b);
 
   const opArr = Object.keys(operators);
   const len = opArr.length;
@@ -50,7 +51,7 @@ export const makeGameData = () => {
   }
   input.push(opArr[randomIndex]);
 
-  const answer = calc(...input).toString();
+  const answer = calc(...input, mathOperations).toString();
   const [num1, num2, opName] = input;
   const task = `Question: ${num1} ${operators[opName]} ${num2}.`;
   return [task, answer];
