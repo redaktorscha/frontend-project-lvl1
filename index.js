@@ -1,34 +1,34 @@
 import readlineSync from 'readline-sync';
-import greetUser from './src/greetUser.js';
-import gameRules from './src/gameRules.js';
-import makeGameData from './src/makeGameData.js';
+
+const maxAttempts = 3;
 
 /**
- * play game depending on game type and max attempts number
- * @param {string} gameType
- * @param {number} maxAttempts
+ * @param {string} gameRule
+ * @param {function(): Array<string>} getGameData
  */
-const playGame = (gameType, maxAttempts) => {
-  const userName = greetUser(true); // get user name
-
-  let attemptCnt = 0;
-  const gameRule = gameRules[gameType]; // get console msg - rule of the current game
+const playGame = (gameRule, getGameData) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(gameRule);
 
-  while (attemptCnt < maxAttempts) {
-    const [currentTask, correctAnswer] = makeGameData(gameType);
+  let attemptCount = 0;
+
+  while (attemptCount < maxAttempts) {
+    const [currentTask, correctAnswer] = getGameData();
+
     console.log(currentTask);
-    const userAnswer = readlineSync.question('Your answer: '); // get user console input
+
+    const userAnswer = readlineSync.question('Your answer: ');
+
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      attemptCnt += 1;
+      attemptCount += 1;
     } else {
-      // game over, user loses
       console.log(`'${userAnswer}' is wrong answer :-( Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`);
       return;
     }
   }
-  // user wins
   console.log(`Congratulations, ${userName}!`);
 };
 
