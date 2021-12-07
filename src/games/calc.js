@@ -1,9 +1,9 @@
-import generateRandInt from '../common/generateRandInt.js';
+import { generateNumber } from '../utils.js';
 
 /**
  * @type {string}
  */
-export const gameRule = 'What is the result of the expression?';
+export const description = 'What is the result of the expression?';
 
 /**
  * @returns {Array<string>}
@@ -36,23 +36,24 @@ export const makeGameData = () => {
   /**
    * @param {number} a
    * @param {number} b
-   * @param {string} op
+   * @param {string} operation
    * @param {mathOperations} math
    * @returns {number}
    */
-  const calc = (a, b, op, math) => math[op](a, b);
+  const calc = (a, b, operation, math) => math[operation](a, b);
 
-  const opArr = Object.keys(operators);
-  const len = opArr.length;
-  const randomIndex = generateRandInt(len);
-  const input = [];
+  const operationsArr = Object.keys(mathOperations);
+  const len = operationsArr.length;
+  const randomIndex = generateNumber(len);
+
+  const randomData = [];
   for (let i = 0; i < 2; i += 1) {
-    input.push(generateRandInt());
+    randomData.push(generateNumber());
   }
-  input.push(opArr[randomIndex]);
+  randomData.push(operationsArr[randomIndex]);
 
-  const answer = calc(...input, mathOperations).toString();
-  const [num1, num2, opName] = input;
-  const task = `Question: ${num1} ${operators[opName]} ${num2}.`;
-  return [task, answer];
+  const answer = calc(...randomData, mathOperations).toString();
+  const [num1, num2, operationName] = randomData;
+  const question = `Question: ${num1} ${operators[operationName]} ${num2}.`;
+  return [question, answer];
 };

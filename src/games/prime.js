@@ -1,9 +1,9 @@
-import generateRandInt from '../common/generateRandInt.js';
+import { generateNumber } from '../utils.js';
 
 /**
  * @type {string}
  */
-export const gameRule = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'.';
+export const description = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'.';
 
 /**
  * @returns {Array<string>}
@@ -25,8 +25,8 @@ export const makeGameData = () => {
     return true;
   };
 
-  const input = generateRandInt();
-  const task = `Question: ${input}.`;
-  const answer = isPrime(input) ? 'yes' : 'no';
-  return [task, answer];
+  const randomNumber = generateNumber();
+  const question = `Question: ${randomNumber}.`;
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
+  return [question, answer];
 };

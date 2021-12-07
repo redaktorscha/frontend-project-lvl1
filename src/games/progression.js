@@ -1,9 +1,9 @@
-import generateRandInt from '../common/generateRandInt.js';
+import { generateNumber } from '../utils.js';
 
 /**
  * @type {string}
  */
-export const gameRule = 'What number is missing in this progression?';
+export const description = 'What number is missing in this progression?';
 
 /**
  * @returns {Array<string>}
@@ -16,9 +16,9 @@ export const makeGameData = () => {
    */
   const createSequence = (len, interval) => {
     const sequence = [];
-    const missingIndex = generateRandInt(len);
-    const gap = generateRandInt(interval) + 1;
-    const start = generateRandInt(interval);
+    const missingIndex = generateNumber(len);
+    const gap = generateNumber(interval) + 1;
+    const start = generateNumber(interval);
 
     let sequenceElem = start;
     for (let i = 0; i < len; i += 1) {
@@ -31,11 +31,11 @@ export const makeGameData = () => {
     return sequence;
   };
 
-  const seqLen = 10;
+  const sequenceLength = 10;
   const range = 10;
-  const input = createSequence(seqLen, range);
+  const randomSequence = createSequence(sequenceLength, range);
 
-  const answer = input.slice(-1).toString();
-  const task = `Question: ${input.slice(0, -1).join(' ')}.`;
-  return [task, answer];
+  const answer = randomSequence.slice(-1).toString();
+  const question = `Question: ${randomSequence.slice(0, -1).join(' ')}.`;
+  return [question, answer];
 };
