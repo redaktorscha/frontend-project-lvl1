@@ -1,4 +1,4 @@
-import { generateNumber } from '../utils.js';
+import generateNumber from '../utils.js';
 
 /**
  * @type {string}
