@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const maxAttempts = 3;
+const maxAttemptsCount = 3;
 
 /**
  * @param {string} description
@@ -14,7 +14,7 @@ const runGame = (description, getGameData) => {
 
   let attemptsCount = 0;
 
-  while (attemptsCount < maxAttempts) {
+  while (attemptsCount < maxAttemptsCount) {
     const [question, correctAnswer] = getGameData();
 
     console.log(question);
