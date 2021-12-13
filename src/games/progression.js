@@ -4,12 +4,12 @@ import runGame from '../../index.js';
 /**
  * @type {string}
  */
-export const description = 'What number is missing in this progression?';
+const description = 'What number is missing in this progression?';
 
 /**
  * @returns {Array<string>}
  */
-export const makeGameData = () => {
+const makeGameData = () => {
   const sequenceLength = 10;
   const range = 10;
   const randomSequence = createSequence(sequenceLength, range);
