@@ -1,10 +1,26 @@
-import { generateNumber, calculate } from '../utils.js';
+import generateNumber from '../utils.js';
 import runGame from '../../index.js';
 
 /**
  * @type {string}
  */
 const description = 'What is the result of the expression?';
+
+/**
+ * @param {number} a
+ * @param {number} b
+ * @param {string} operator
+ * @returns {number}
+ */
+const calculate = (a, b, operator) => {
+  if (operator === '+') {
+    return a + b;
+  }
+  if (operator === '-') {
+    return a - b;
+  }
+  return a * b;
+};
 
 /**
  * @returns {Array<string>}
@@ -17,14 +33,14 @@ const makeGameData = () => {
 
   const { length } = operators;
 
-  const randomIndex = generateNumber(0, length);
-  const randomOperator = operators[randomIndex];
+  const index = generateNumber(0, length);
+  const operator = operators[index];
 
-  const randomNum1 = generateNumber(1, 100);
-  const randomNum2 = generateNumber(1, 100);
+  const num1 = generateNumber(1, 50);
+  const num2 = generateNumber(1, 50);
 
-  const answer = calculate(randomNum1, randomNum2, randomOperator).toString();
-  const question = `Question: ${randomNum1} ${randomOperator} ${randomNum2}.`;
+  const answer = calculate(num1, num2, operator).toString();
+  const question = `Question: ${num1} ${operator} ${num2}.`;
   return [question, answer];
 };
 
