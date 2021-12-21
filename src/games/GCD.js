@@ -1,4 +1,4 @@
-import { generateNumber, findGCD } from '../utils.js';
+import generateNumber from '../utils.js';
 import runGame from '../../index.js';
 
 /**
@@ -7,15 +7,26 @@ import runGame from '../../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 /**
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+const findGCD = (a, b) => {
+  if (b === 0) {
+    return a;
+  }
+  return findGCD(b, a % b);
+};
+
+/**
  * @returns {Array<string>}
  */
 const makeGameData = () => {
-  const randomNum1 = generateNumber(1, 100);
-  const randomNum2 = generateNumber(1, 100);
-  const answer = findGCD(randomNum1, randomNum2).toString();
-  const question = `Question: ${randomNum1} ${randomNum2}.`;
+  const num1 = generateNumber(1, 50);
+  const num2 = generateNumber(1, 50);
+  const answer = findGCD(num1, num2).toString();
+  const question = `Question: ${num1} ${num2}.`;
 
   return [question, answer];
 };
-
 export default () => runGame(description, makeGameData);
