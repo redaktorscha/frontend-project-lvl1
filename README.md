@@ -13,7 +13,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/redaktorscha/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/redaktorscha/frontend-project-lvl1/actions)
 [![Actions Status](https://github.com/redaktorscha/frontend-project-lvl1/workflows/nodejs/badge.svg)](https://github.com/redaktorscha/frontend-project-lvl1/workflows/nodejs/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9e557b0599506bc95a82/maintainability)](https://codeclimate.com/github/redaktorscha/frontend-project-lvl1/maintainability)
 
 ### Brain-even game example (asciinema)
 [![asciicast](https://asciinema.org/a/452125.svg)](https://asciinema.org/a/452125)
